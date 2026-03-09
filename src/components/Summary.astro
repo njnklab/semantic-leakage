@@ -1,0 +1,74 @@
+<section id="summary">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker">30-second summary</div>
+        <h2>Four signals that define this paper.</h2>
+      </div>
+      <p>What is being asked, what evidence is available, what methodological advance is introduced, and what conclusion is justified.</p>
+    </div>
+    <div class="signal-grid">
+      <div class="panel signal-card">
+        <div class="signal-index">Signal 01</div>
+        <h3>Question</h3>
+        <p>Did the pandemic reorganize the architecture of youth symptoms, or did it mainly reallocate control within a conserved symptom scaffold?</p>
+      </div>
+      <div class="panel signal-card">
+        <div class="signal-index">Signal 02</div>
+        <h3>Evidence</h3>
+        <p>The study analyzes repeated cross-sections of U.S. young adults aged 18–24 across five pandemic phases, with 47 MHQ symptom items and an India replication cohort for external comparison.</p>
+      </div>
+      <div class="panel signal-card">
+        <div class="signal-index">Signal 03</div>
+        <h3>Advance</h3>
+        <p>Instead of treating symptom networks only as node-level hub structures, the paper models domination-based control at the module level and tests which derived metrics remain interpretable under resampling.</p>
+      </div>
+      <div class="panel signal-card">
+        <div class="signal-index">Signal 04</div>
+        <h3>Conclusion</h3>
+        <p>Modules remain broadly stable across phases, but control shifts from early stress dominance to later multi-module governance. AMCS is a more reliable cross-phase comparator than ACF.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .signal-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .signal-card {
+    padding: 20px;
+    min-height: 200px;
+  }
+
+  .signal-index {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+
+  .signal-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+
+  .signal-card p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .signal-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 480px) {
+    .signal-grid { grid-template-columns: 1fr; }
+  }
+</style>
