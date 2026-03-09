@@ -5,85 +5,85 @@
       <h2>Controlled migration around a persistent core.</h2>
       <p class="subtitle">Stable backbone controllers persist across phases, while macro context is carefully framed as associational, not causal.</p>
     </div>
-    <div class="backbone-layout">
-      <div class="backbone-left">
-        <div class="backbone-card panel">
+    <div class="bb-layout">
+      <div class="bb-left">
+        <div class="panel bb-card">
           <h3>Backbone controllers</h3>
-          <p class="card-intro">These nodes remain relatively prominent across all five phases. Click to explore.</p>
+          <p class="bb-intro">These nodes remain relatively prominent across all five phases. Click to explore.</p>
           <div class="node-list" id="nodeList"></div>
           <div class="node-detail" id="nodeDetail">
             <p class="node-placeholder">Select a symptom above.</p>
           </div>
         </div>
-        <div class="backbone-figure figure-block">
-          <img src="/covid-mcn-site/figs/fig4.png" alt="Fig. 4 — Control frequency across phases" loading="lazy" />
-          <div class="figure-caption">Fig. 4 — Node-level control frequency across five phases</div>
-        </div>
+        <figure class="fig-inline">
+          <img src="/covid-mcn-site/figs/fig4-2.png" alt="Control frequency networks and alluvial flow across phases" loading="lazy" />
+          <figcaption class="fig-cap">Fig. 4 — Control frequency, CV scatter, and alluvial flow of module dominance across phases</figcaption>
+        </figure>
       </div>
-      <div class="backbone-right">
-        <div class="panel context-card">
+      <div class="bb-right">
+        <div class="panel ctx-card">
           <h3>Macro context</h3>
-          <p class="card-intro">The manuscript's exploratory analysis situates network changes within policy and epidemiological time structure — without claiming causation.</p>
-          <div class="context-items">
-            <div class="context-item">
-              <div class="context-marker" style="background: var(--str)"></div>
+          <p class="bb-intro">Exploratory analysis situates network changes within policy and epidemiological time structure — without claiming causation.</p>
+          <div class="ctx-items">
+            <div class="ctx-row">
+              <div class="ctx-bar" style="background: var(--str)"></div>
               <div>
                 <h4>Policy variables appear more proximal than case counts</h4>
                 <p>The organization of daily life may track youth symptoms more closely than epidemiological burden by itself.</p>
               </div>
             </div>
-            <div class="context-item">
-              <div class="context-marker" style="background: var(--emo)"></div>
+            <div class="ctx-row">
+              <div class="ctx-bar" style="background: var(--emo)"></div>
               <div>
                 <h4>Illustrative, not deterministic</h4>
-                <p>Fear &amp; Anxiety aligns with movement restrictions; Emotional Resilience shows a short-lag relationship with travel controls.</p>
+                <p>Fear & Anxiety aligns with movement restrictions; Emotional Resilience shows a short-lag relationship with travel controls.</p>
               </div>
             </div>
-            <div class="context-item">
-              <div class="context-marker" style="background: var(--csf)"></div>
+            <div class="ctx-row">
+              <div class="ctx-bar" style="background: var(--csf)"></div>
               <div>
                 <h4>Language discipline throughout</h4>
-                <p>The site uses "tracked," "aligned with," and "provided context for" — never causal phrases.</p>
+                <p>"Tracked," "aligned with," and "provided context for" — never causal phrases.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="backbone-figure figure-block">
-          <img src="/covid-mcn-site/figs/fig5.png" alt="Fig. 5 — Macro-context analysis" loading="lazy" />
-          <div class="figure-caption">Fig. 5 — Macro-context and lagged associations</div>
-        </div>
+        <figure class="fig-inline">
+          <img src="/covid-mcn-site/figs/fig5.png" alt="Macro-context and lagged associations" loading="lazy" />
+          <figcaption class="fig-cap">Fig. 5 — Policy decoupling, lagged associations, and lag-lead heatmap</figcaption>
+        </figure>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  .backbone-layout {
+  .bb-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: clamp(16px, 3vw, 24px);
     align-items: start;
   }
 
-  .backbone-left, .backbone-right {
+  .bb-left, .bb-right {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
   }
 
-  .backbone-card, .context-card { padding: 24px; }
+  .bb-card, .ctx-card { padding: clamp(16px, 2vw, 24px); }
 
-  .card-intro {
+  .bb-intro {
     color: var(--muted);
-    font-size: 0.9rem;
-    margin-bottom: 16px;
+    font-size: clamp(0.82rem, 0.9vw, 0.92rem);
+    margin-bottom: 14px;
   }
 
   .node-list {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .node-chip {
@@ -93,37 +93,32 @@
     border-radius: 999px;
     padding: 7px 14px;
     font-weight: 600;
-    font-size: 0.82rem;
+    font-size: clamp(0.76rem, 0.85vw, 0.84rem);
     cursor: pointer;
     transition: all 0.2s ease;
     font-family: var(--font-body);
   }
 
   .node-chip:hover { border-color: var(--ink); }
-
-  .node-chip.active {
-    background: var(--ink);
-    color: white;
-    border-color: var(--ink);
-  }
+  .node-chip.active { background: var(--ink); color: white; border-color: var(--ink); }
 
   .node-detail {
-    padding: 18px;
+    padding: clamp(14px, 2vw, 18px);
     border-radius: var(--radius);
     background: var(--bg);
     border: 1px solid var(--line);
-    min-height: 160px;
+    min-height: 140px;
   }
 
-  .node-detail h3 { font-size: 1rem; margin-bottom: 8px; }
+  .node-detail h3 { font-size: clamp(0.9rem, 1vw, 1rem); margin-bottom: 8px; }
 
   .node-tags {
-    display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px;
+    display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;
   }
 
   .node-tag {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: clamp(0.66rem, 0.75vw, 0.74rem);
     padding: 4px 10px;
     border-radius: 999px;
     background: var(--paper);
@@ -133,32 +128,25 @@
   }
 
   .node-placeholder { color: var(--muted); font-size: 0.88rem; margin: 0; }
-  .node-detail p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+  .node-detail p { font-size: clamp(0.82rem, 0.9vw, 0.9rem); color: var(--muted); line-height: 1.6; }
 
-  .context-items { display: flex; flex-direction: column; gap: 12px; }
+  .ctx-items { display: flex; flex-direction: column; gap: 10px; }
 
-  .context-item {
+  .ctx-row {
     display: flex;
-    gap: 14px;
-    padding: 16px;
+    gap: 12px;
+    padding: clamp(12px, 1.5vw, 16px);
     border-radius: var(--radius);
     background: var(--bg);
     border: 1px solid var(--line);
   }
 
-  .context-marker {
-    width: 4px;
-    border-radius: 2px;
-    flex-shrink: 0;
-  }
-
-  .context-item h4 { font-size: 0.88rem; margin-bottom: 4px; }
-  .context-item p { font-size: 0.84rem; color: var(--muted); margin-bottom: 0; line-height: 1.55; }
-
-  .backbone-figure { box-shadow: var(--shadow-sm); }
+  .ctx-bar { width: 4px; border-radius: 2px; flex-shrink: 0; }
+  .ctx-row h4 { font-size: clamp(0.82rem, 0.9vw, 0.9rem); margin-bottom: 4px; }
+  .ctx-row p { font-size: clamp(0.78rem, 0.85vw, 0.86rem); color: var(--muted); margin-bottom: 0; line-height: 1.55; }
 
   @media (max-width: 768px) {
-    .backbone-layout { grid-template-columns: 1fr; }
+    .bb-layout { grid-template-columns: 1fr; }
   }
 </style>
 

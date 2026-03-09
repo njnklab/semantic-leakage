@@ -4,25 +4,25 @@
       <div class="kicker">Glossary</div>
       <h2>Key terms, plainly explained.</h2>
     </div>
-    <div class="glossary-grid stagger">
-      <div class="glossary-item">
-        <div class="glossary-term">Mesoscale scaffold</div>
+    <div class="gloss-grid stagger">
+      <div class="gloss-item">
+        <div class="gloss-term">Mesoscale scaffold</div>
         <p>The relatively stable community structure of the symptom network — the broad modular organization that persists even when influence shifts across phases.</p>
       </div>
-      <div class="glossary-item">
-        <div class="glossary-term">Minimum dominating set <span class="term-abbr">MDS</span></div>
+      <div class="gloss-item">
+        <div class="gloss-term">Minimum dominating set <span class="abbr">MDS</span></div>
         <p>The smallest set of nodes that covers the whole graph directly or through neighbors. Defines which symptoms can serve as drivers.</p>
       </div>
-      <div class="glossary-item">
-        <div class="glossary-term">Control frequency <span class="term-abbr">CF</span></div>
+      <div class="gloss-item">
+        <div class="gloss-term">Control frequency <span class="abbr">CF</span></div>
         <p>Proportion of exact minimum dominating sets in which a symptom appears. High CF = repeated participation in driver solutions.</p>
       </div>
-      <div class="glossary-item">
-        <div class="glossary-term">Avg. control frequency <span class="term-abbr">ACF</span></div>
+      <div class="gloss-item">
+        <div class="gloss-term">Avg. control frequency <span class="abbr">ACF</span></div>
         <p>Mean normalized CF within a module. Informative descriptively, but less stable under case loss than AMCS.</p>
       </div>
-      <div class="glossary-item">
-        <div class="glossary-term">Avg. module control strength <span class="term-abbr">AMCS</span></div>
+      <div class="gloss-item">
+        <div class="gloss-term">Avg. module control strength <span class="abbr">AMCS</span></div>
         <p>Directed summary of how strongly one module dominates another. The manuscript's key mesoscale metric.</p>
       </div>
     </div>
@@ -30,30 +30,30 @@
 </section>
 
 <style>
-  .glossary-grid {
+  .gloss-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 2px;
     border-radius: var(--radius);
     overflow: hidden;
     border: 1px solid var(--line);
   }
 
-  .glossary-item {
-    padding: 20px;
+  .gloss-item {
+    padding: clamp(14px, 2vw, 20px);
     background: var(--paper);
   }
 
-  .glossary-term {
+  .gloss-term {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: clamp(0.86rem, 0.96vw, 0.95rem);
     margin-bottom: 8px;
   }
 
-  .term-abbr {
+  .abbr {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: clamp(0.64rem, 0.72vw, 0.72rem);
     font-weight: 500;
     color: var(--muted);
     background: var(--bg);
@@ -64,18 +64,10 @@
     vertical-align: middle;
   }
 
-  .glossary-item p {
+  .gloss-item p {
     color: var(--muted);
-    font-size: 0.84rem;
+    font-size: clamp(0.78rem, 0.86vw, 0.86rem);
     margin-bottom: 0;
     line-height: 1.6;
-  }
-
-  @media (max-width: 1024px) {
-    .glossary-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-
-  @media (max-width: 768px) {
-    .glossary-grid { grid-template-columns: 1fr; }
   }
 </style>

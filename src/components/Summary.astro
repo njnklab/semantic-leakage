@@ -3,87 +3,92 @@
     <div class="section-head">
       <div class="kicker">30-Second Summary</div>
       <h2>Four signals that define this paper.</h2>
-      <p class="subtitle">What is being asked, what evidence is available, what methodological advance is introduced, and what conclusion is justified.</p>
     </div>
-    <div class="summary-layout">
-      <div class="signal-grid stagger">
-        <div class="panel signal-card">
-          <div class="signal-num">01</div>
-          <h3>Question</h3>
-          <p>Did the pandemic reorganize the architecture of youth symptoms, or did it mainly reallocate control within a conserved symptom scaffold?</p>
+    <div class="summary-flow">
+      <div class="signal-strip stagger">
+        <div class="signal">
+          <span class="snum">01</span>
+          <h4>Question</h4>
+          <p>Did the pandemic reorganize the architecture of youth symptoms, or mainly reallocate control within a conserved scaffold?</p>
         </div>
-        <div class="panel signal-card">
-          <div class="signal-num">02</div>
-          <h3>Evidence</h3>
-          <p>Repeated cross-sections of U.S. young adults aged 18–24 across five pandemic phases, with 47 MHQ symptom items and an India replication cohort.</p>
+        <div class="signal">
+          <span class="snum">02</span>
+          <h4>Evidence</h4>
+          <p>Repeated cross-sections of U.S. young adults aged 18–24 across five pandemic phases, with 47 MHQ items and an India replication cohort.</p>
         </div>
-        <div class="panel signal-card">
-          <div class="signal-num">03</div>
-          <h3>Advance</h3>
-          <p>The paper models domination-based control at the module level and tests which derived metrics remain interpretable under resampling.</p>
+        <div class="signal">
+          <span class="snum">03</span>
+          <h4>Advance</h4>
+          <p>Models domination-based control at the module level and tests which derived metrics remain interpretable under resampling.</p>
         </div>
-        <div class="panel signal-card">
-          <div class="signal-num">04</div>
-          <h3>Conclusion</h3>
+        <div class="signal">
+          <span class="snum">04</span>
+          <h4>Conclusion</h4>
           <p>Modules remain broadly stable, but control shifts from early stress dominance to later multi-module governance. AMCS is more reliable than ACF.</p>
         </div>
       </div>
-      <div class="summary-figure figure-block">
-        <img src="/covid-mcn-site/figs/fig2.png" alt="Fig. 2 — Symptom network structure across five pandemic phases" loading="lazy" />
-        <div class="figure-caption">Fig. 2 — Symptom network structure and community detection across five pandemic phases</div>
+      <div class="summary-figs">
+        <figure class="fig-inline">
+          <img src="/covid-mcn-site/figs/fig2-1.png" alt="Symptom networks across five phases with community structure and bootstrap stability" loading="lazy" />
+          <figcaption class="fig-cap">Fig. 2 — Symptom networks, community structure and bootstrap stability across phases</figcaption>
+        </figure>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  .summary-layout {
+  .summary-flow {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: clamp(16px, 3vw, 32px);
     align-items: start;
   }
 
-  .signal-grid {
+  .signal-strip {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 10px;
   }
 
-  .signal-card {
-    padding: 20px;
+  .signal {
+    padding: clamp(14px, 2vw, 20px);
+    border-radius: var(--radius);
+    background: var(--paper);
+    border: 1px solid var(--line);
   }
 
-  .signal-num {
+  .snum {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     color: var(--muted);
     letter-spacing: 0.1em;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
+    display: block;
     font-weight: 500;
   }
 
-  .signal-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
+  .signal h4 {
+    font-family: var(--font-display);
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+    margin-bottom: 6px;
   }
 
-  .signal-card p {
+  .signal p {
     color: var(--muted);
-    font-size: 0.9rem;
+    font-size: clamp(0.82rem, 0.9vw, 0.9rem);
     margin-bottom: 0;
     line-height: 1.6;
   }
 
-  .summary-figure {
-    box-shadow: var(--shadow);
+  .summary-figs {
     position: sticky;
-    top: 80px;
+    top: 72px;
   }
 
   @media (max-width: 768px) {
-    .summary-layout { grid-template-columns: 1fr; }
-    .signal-grid { grid-template-columns: 1fr; }
-    .summary-figure { position: static; }
+    .summary-flow { grid-template-columns: 1fr; }
+    .signal-strip { grid-template-columns: 1fr; }
+    .summary-figs { position: static; }
   }
 </style>

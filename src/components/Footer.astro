@@ -1,8 +1,8 @@
 <footer class="site-footer">
   <div class="container-narrow">
-    <div class="footer-content">
+    <div class="footer-row">
       <div class="footer-left">
-        <div class="footer-brand">MC</div>
+        <div class="footer-mark">MC</div>
         <div>
           <div class="footer-title">Module Control in Youth Symptom Networks</div>
           <div class="footer-meta">Fan & Zhang · Nanjing Medical University · Submitted to <em>Nature Communications</em></div>
@@ -15,16 +15,16 @@
 
 <style>
   .site-footer {
-    padding: 32px 0 48px;
+    padding: 28px 0 40px;
     border-top: 1px solid var(--line);
     margin-top: 16px;
   }
 
-  .footer-content {
+  .footer-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
     flex-wrap: wrap;
   }
 
@@ -34,7 +34,7 @@
     gap: 12px;
   }
 
-  .footer-brand {
+  .footer-mark {
     width: 28px;
     height: 28px;
     border-radius: 6px;
@@ -48,23 +48,16 @@
     flex-shrink: 0;
   }
 
-  .footer-title {
-    font-size: 0.84rem;
-    font-weight: 600;
-  }
-
-  .footer-meta {
-    font-size: 0.78rem;
-    color: var(--muted);
-  }
+  .footer-title { font-size: clamp(0.78rem, 0.88vw, 0.86rem); font-weight: 600; }
+  .footer-meta { font-size: clamp(0.72rem, 0.82vw, 0.8rem); color: var(--muted); }
 
   .footer-note {
-    font-size: 0.78rem;
+    font-size: clamp(0.72rem, 0.82vw, 0.8rem);
     color: var(--muted);
     font-family: var(--font-mono);
   }
 
   @media (max-width: 768px) {
-    .footer-content { flex-direction: column; align-items: flex-start; }
+    .footer-row { flex-direction: column; align-items: flex-start; }
   }
 </style>
