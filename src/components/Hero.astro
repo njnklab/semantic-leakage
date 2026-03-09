@@ -1,85 +1,162 @@
 <section class="hero">
   <div class="container">
-    <div class="eyebrow">Companion site for editorial triage and peer review</div>
-    <h1 class="hero-title">Same scaffold, different controllers.</h1>
-    <p class="hero-lead">Across five phases of the COVID-19 pandemic, youth symptom networks preserved a broadly similar modular architecture while the distribution of control shifted from an early stress-centered configuration toward a later cross-domain pattern spanning emotional, cognitive-social, and self-perception/physiological domains.</p>
-    <div class="hero-actions">
-      <a class="button" href="#summary">30-second summary</a>
-      <a class="button alt" href="#phases">Explore the phases</a>
-      <a class="button alt" href="#methods">Methods &amp; robustness</a>
+    <div class="hero-layout">
+      <div class="hero-text">
+        <div class="kicker">Editorial &amp; Reviewer Companion</div>
+        <h1 class="hero-title">Same scaffold,<br/>different controllers.</h1>
+        <p class="hero-lead">Across five phases of the COVID-19 pandemic, youth symptom networks preserved a broadly similar modular architecture while the distribution of control shifted from an early stress-centered configuration toward a later cross-domain pattern.</p>
+        <div class="hero-actions">
+          <a class="button" href="#summary">Read the summary</a>
+          <a class="button alt" href="#phases">Explore phases</a>
+          <a class="button alt" href="#methods">Methods</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-figure figure-block">
+          <img src="/covid-mcn-site/figs/fig1.png" alt="Study overview: Module control in youth symptom networks across five COVID-19 pandemic phases" loading="eager" />
+          <div class="figure-caption">Fig. 1 — Study overview and five pandemic phases</div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">14,181</div>
+            <div class="stat-label">U.S. young adults</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">47</div>
+            <div class="stat-label">MHQ symptoms</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5</div>
+            <div class="stat-label">pandemic phases</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4</div>
+            <div class="stat-label">symptom domains</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div class="stat-pill"><span class="stat-value">14,181</span> participants</div>
-      <div class="stat-pill"><span class="stat-value">47</span> symptoms</div>
-      <div class="stat-pill"><span class="stat-value">5</span> phases</div>
-      <div class="stat-pill"><span class="stat-value">2020–2023</span></div>
+    <div class="hero-domains">
+      <div class="domain-pill" style="--c: var(--str)"><span class="domain-dot" style="background: var(--str)"></span>Stress Response</div>
+      <div class="domain-pill" style="--c: var(--emo)"><span class="domain-dot" style="background: var(--emo)"></span>Emotional Regulation</div>
+      <div class="domain-pill" style="--c: var(--csf)"><span class="domain-dot" style="background: var(--csf)"></span>Cognitive &amp; Social</div>
+      <div class="domain-pill" style="--c: var(--spf)"><span class="domain-dot" style="background: var(--spf)"></span>Self-perception &amp; Physiological</div>
     </div>
   </div>
 </section>
 
 <style>
   .hero {
-    padding: 48px 0 32px;
+    padding: 56px 0 40px;
+    border-bottom: 1px solid var(--line);
   }
 
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 14px;
-    border-radius: 999px;
-    background: rgba(86, 180, 233, 0.1);
-    color: var(--accent);
-    font-size: 0.82rem;
-    font-weight: 700;
-    margin-bottom: 20px;
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-bottom: 32px;
   }
 
   .hero-title {
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    max-width: 16ch;
-    margin-bottom: 16px;
+    font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+    line-height: 1.08;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
   }
 
   .hero-lead {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     color: var(--muted);
-    max-width: 72ch;
-    margin-bottom: 24px;
+    max-width: 52ch;
+    margin-bottom: 28px;
+    line-height: 1.7;
   }
 
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 28px;
+    gap: 8px;
+  }
+
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hero-figure {
+    box-shadow: var(--shadow);
   }
 
   .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 14px 8px;
+    border-radius: var(--radius);
+    background: var(--paper);
+    border: 1px solid var(--line);
+  }
+
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+
+  .hero-domains {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
   }
 
-  .stat-pill {
+  .domain-pill {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    padding: 8px 14px;
+    gap: 8px;
+    padding: 8px 16px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.88);
-    border: 1px solid rgba(23, 33, 43, 0.08);
-    font-size: 0.88rem;
-    color: var(--muted);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--ink);
+    transition: border-color 0.2s;
   }
 
-  .stat-value {
-    font-weight: 800;
-    color: var(--ink);
+  .domain-pill:hover {
+    border-color: var(--c);
+  }
+
+  @media (max-width: 768px) {
+    .hero-layout {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .hero { padding: 40px 0 32px; }
   }
 
   @media (max-width: 480px) {
-    .hero { padding: 32px 0 24px; }
-    .hero-title { max-width: 100%; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
   }
 </style>

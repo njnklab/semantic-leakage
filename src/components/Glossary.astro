@@ -1,32 +1,29 @@
 <section id="glossary">
   <div class="container">
     <div class="section-head">
-      <div>
-        <div class="kicker">Glossary for fast reading</div>
-        <h2>Technical language translated, not removed.</h2>
-      </div>
-      <p>A short glossary reduces editorial friction for terms central to the manuscript but not yet familiar to all reviewers.</p>
+      <div class="kicker">Glossary</div>
+      <h2>Key terms, plainly explained.</h2>
     </div>
-    <div class="glossary-grid">
-      <div class="panel glossary-card">
-        <h4>Mesoscale scaffold</h4>
-        <p>The relatively stable community structure of the symptom network. Here, it refers to the broad modular organization that persists even when influence shifts across phases.</p>
+    <div class="glossary-grid stagger">
+      <div class="glossary-item">
+        <div class="glossary-term">Mesoscale scaffold</div>
+        <p>The relatively stable community structure of the symptom network — the broad modular organization that persists even when influence shifts across phases.</p>
       </div>
-      <div class="panel glossary-card">
-        <h4>Minimum dominating set (MDS)</h4>
-        <p>The smallest set of nodes that covers the whole graph directly or through neighbors. It provides a concrete way to define which symptoms can serve as drivers in the network.</p>
+      <div class="glossary-item">
+        <div class="glossary-term">Minimum dominating set <span class="term-abbr">MDS</span></div>
+        <p>The smallest set of nodes that covers the whole graph directly or through neighbors. Defines which symptoms can serve as drivers.</p>
       </div>
-      <div class="panel glossary-card">
-        <h4>Control frequency (CF)</h4>
-        <p>The proportion of exact minimum dominating sets in which a symptom appears. A high CF means the symptom repeatedly participates in minimal driver solutions.</p>
+      <div class="glossary-item">
+        <div class="glossary-term">Control frequency <span class="term-abbr">CF</span></div>
+        <p>Proportion of exact minimum dominating sets in which a symptom appears. High CF = repeated participation in driver solutions.</p>
       </div>
-      <div class="panel glossary-card">
-        <h4>Average control frequency (ACF)</h4>
-        <p>The average normalized control frequency within a module or domain. Informative descriptively, but less stable under case loss than AMCS.</p>
+      <div class="glossary-item">
+        <div class="glossary-term">Avg. control frequency <span class="term-abbr">ACF</span></div>
+        <p>Mean normalized CF within a module. Informative descriptively, but less stable under case loss than AMCS.</p>
       </div>
-      <div class="panel glossary-card">
-        <h4>Average module control strength (AMCS)</h4>
-        <p>A directed summary of how strongly one symptom module dominates another. The manuscript's key mesoscale comparison metric and the most important control graphic to foreground.</p>
+      <div class="glossary-item">
+        <div class="glossary-term">Avg. module control strength <span class="term-abbr">AMCS</span></div>
+        <p>Directed summary of how strongly one module dominates another. The manuscript's key mesoscale metric.</p>
       </div>
     </div>
   </div>
@@ -36,22 +33,49 @@
   .glossary-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
+    gap: 2px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
   }
 
-  .glossary-card {
-    padding: 18px;
-    min-height: 170px;
+  .glossary-item {
+    padding: 20px;
+    background: var(--paper);
   }
 
-  .glossary-card h4 { font-size: 0.9rem; margin-bottom: 8px; }
-  .glossary-card p { color: var(--muted); font-size: 0.86rem; margin-bottom: 0; }
+  .glossary-term {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .term-abbr {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--muted);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+
+  .glossary-item p {
+    color: var(--muted);
+    font-size: 0.84rem;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
 
   @media (max-width: 1024px) {
-    .glossary-grid { grid-template-columns: repeat(2, 1fr); }
+    .glossary-grid { grid-template-columns: repeat(3, 1fr); }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     .glossary-grid { grid-template-columns: 1fr; }
   }
 </style>

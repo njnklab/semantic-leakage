@@ -1,88 +1,88 @@
 <section id="methods">
   <div class="container">
     <div class="section-head">
-      <div>
-        <div class="kicker">Method and robustness</div>
-        <h2>The analytic pipeline in five steps.</h2>
-      </div>
-      <p>Editors and reviewers should be able to understand the pipeline in one pass, then inspect the pieces that support credibility.</p>
+      <div class="kicker">Method &amp; Robustness</div>
+      <h2>The analytic pipeline, step by step.</h2>
+      <p class="subtitle">A transparent five-step flow from raw data to validated findings, with explicit robustness evidence.</p>
     </div>
-    <div class="methods-grid">
-      <div class="panel methods-left">
-        <h3>Five-step analytic flow</h3>
-        <div class="steps">
-          <div class="step-item">
-            <div class="step-num">1</div>
-            <div class="step-content">
-              <h4>Phase-stratified repeated cross-sections</h4>
-              <p>The data are organized into five pandemic phases rather than treated as one undifferentiated pool. This turns the paper into a comparative systems study: the same source population is sampled repeatedly across changing macro conditions, allowing structured phase-wise contrasts while avoiding false longitudinal claims.</p>
-            </div>
+    <div class="method-layout">
+      <div class="method-pipeline">
+        <div class="pipeline-step">
+          <div class="step-marker"><span>1</span></div>
+          <div class="step-body">
+            <h4>Phase-stratified repeated cross-sections</h4>
+            <p>Data organized into five pandemic phases, enabling structured comparison across changing macro conditions while avoiding false longitudinal claims.</p>
           </div>
-          <div class="step-item">
-            <div class="step-num">2</div>
-            <div class="step-content">
-              <h4>Graphical model estimation</h4>
-              <p>For each phase, the symptom network is estimated with a Gaussian graphical model using graphical LASSO. The resulting graph represents conditional dependence structure among 47 MHQ symptoms, providing the support on which community and domination analyses are built.</p>
-            </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="step-marker"><span>2</span></div>
+          <div class="step-body">
+            <h4>Graphical model estimation</h4>
+            <p>Per-phase symptom network estimated via Gaussian graphical model (graphical LASSO), representing conditional dependence among 47 MHQ symptoms.</p>
           </div>
-          <div class="step-item">
-            <div class="step-num">3</div>
-            <div class="step-content">
-              <h4>Community detection and domain alignment</h4>
-              <p>Weighted Louvain community detection identifies a small number of phase-specific communities. These are then aligned to a fixed, a priori domain mapping to make cross-phase interpretation comparable and non-circular.</p>
-            </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="step-marker"><span>3</span></div>
+          <div class="step-body">
+            <h4>Community detection &amp; domain alignment</h4>
+            <p>Weighted Louvain identifies communities, aligned to a fixed a priori four-domain mapping for comparable, non-circular cross-phase interpretation.</p>
           </div>
-          <div class="step-item">
-            <div class="step-num">4</div>
-            <div class="step-content">
-              <h4>Exact minimum dominating sets and control metrics</h4>
-              <p>All minimum-cardinality dominating sets are enumerated exactly on the unweighted support graph. This allows defining node-level control frequency and deriving module-level measures such as ACF and AMCS rather than relying only on traditional hub metrics.</p>
-            </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="step-marker"><span>4</span></div>
+          <div class="step-body">
+            <h4>Exact minimum dominating sets &amp; control metrics</h4>
+            <p>All minimum-cardinality dominating sets enumerated exactly, yielding node-level control frequency and module-level ACF and AMCS measures.</p>
           </div>
-          <div class="step-item">
-            <div class="step-num">5</div>
-            <div class="step-content">
-              <h4>Resampling, case-dropping, and replication</h4>
-              <p>The study explicitly asks which metrics survive bootstrap variation and case loss, then checks whether the broad mesoscale story replicates in an India cohort, including phase-wise downsampling to control for sample-size differences.</p>
-            </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="step-marker"><span>5</span></div>
+          <div class="step-body">
+            <h4>Resampling, case-dropping &amp; replication</h4>
+            <p>Bootstrap variation, case-loss stability, and India cohort replication with phase-wise downsampling to separate robust signals from noise.</p>
           </div>
         </div>
       </div>
-      <div class="panel methods-right">
-        <h3>Evidence of rigor</h3>
-        <div class="evidence-cards">
-          <div class="evidence-card">
+      <div class="method-right">
+        <div class="panel robustness-panel">
+          <h3>Metric stability at 60% case retention</h3>
+          <p class="rob-subtitle">Mean replicate-to-baseline correlation across all phases</p>
+          <div class="rob-bars">
+            <div class="rob-row">
+              <span class="rob-label">Strength</span>
+              <div class="rob-track"><div class="rob-fill" style="width: 83.8%; background: var(--spf);"></div></div>
+              <span class="rob-val good">0.838</span>
+            </div>
+            <div class="rob-row">
+              <span class="rob-label">AMCS</span>
+              <div class="rob-track"><div class="rob-fill" style="width: 73.7%; background: var(--emo);"></div></div>
+              <span class="rob-val moderate">0.737</span>
+            </div>
+            <div class="rob-row">
+              <span class="rob-label">ACF</span>
+              <div class="rob-track"><div class="rob-fill" style="width: 33.9%; background: var(--str);"></div></div>
+              <span class="rob-val weak">0.339</span>
+            </div>
+          </div>
+          <p class="rob-note">This hierarchy explains why the manuscript emphasizes AMCS over ACF for cross-phase comparison.</p>
+        </div>
+        <div class="evidence-grid">
+          <div class="panel evidence-item">
             <h4>Replication</h4>
-            <p>India cohort replication and phase-wise downsampling sensitivity analysis help show that the mesoscale and control-redistribution patterns are not a simple artifact of one country or a larger comparison sample.</p>
+            <p>India cohort and phase-wise downsampling show patterns aren't an artifact of one country or sample size.</p>
           </div>
-          <div class="evidence-card">
+          <div class="panel evidence-item">
             <h4>Metric discipline</h4>
-            <p>Node strength and AMCS are elevated as the more stable signals, while ACF is explicitly presented as a descriptive metric that is more case-loss sensitive.</p>
+            <p>Node strength and AMCS are stable; ACF is explicitly flagged as more sensitive to case loss.</p>
           </div>
-          <div class="evidence-card">
+          <div class="panel evidence-item">
             <h4>Bounded inference</h4>
-            <p>The design is repeated cross-sectional, not longitudinal; network edges are conditional dependencies, not causal directions; and macro links are exploratory.</p>
+            <p>Cross-sectional design, conditional dependencies (not causal), and exploratory macro links.</p>
           </div>
         </div>
-        <div class="robustness-bars">
-          <h4>Stability at 60% case retention</h4>
-          <p class="bar-subtitle">Mean replicate-to-baseline correlation across phases</p>
-          <div class="bar-row">
-            <span class="bar-label">Strength</span>
-            <div class="bar-track"><div class="bar-fill bar-good" style="width: 83.8%"></div></div>
-            <span class="bar-value">0.838</span>
-          </div>
-          <div class="bar-row">
-            <span class="bar-label">AMCS</span>
-            <div class="bar-track"><div class="bar-fill bar-moderate" style="width: 73.7%"></div></div>
-            <span class="bar-value">0.737</span>
-          </div>
-          <div class="bar-row">
-            <span class="bar-label">ACF</span>
-            <div class="bar-track"><div class="bar-fill bar-weak" style="width: 33.9%"></div></div>
-            <span class="bar-value">0.339</span>
-          </div>
-          <p class="bar-note">This hierarchy explains why the manuscript emphasizes some metrics more than others.</p>
+        <div class="method-figure figure-block">
+          <img src="/covid-mcn-site/figs/fig6.png" alt="Fig. 6 — Robustness analysis" loading="lazy" />
+          <div class="figure-caption">Fig. 6 — Bootstrap stability and case-dropping robustness</div>
         </div>
       </div>
     </div>
@@ -90,118 +90,141 @@
 </section>
 
 <style>
-  .methods-grid {
+  .method-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 32px;
+    align-items: start;
   }
 
-  .methods-left, .methods-right { padding: 24px; }
-
-  .methods-left h3, .methods-right h3 {
-    font-size: 1.1rem;
-    margin-bottom: 16px;
-  }
-
-  .steps { display: grid; gap: 12px; }
-
-  .step-item {
+  .method-pipeline {
+    position: relative;
     display: flex;
-    gap: 14px;
-    padding: 14px;
-    border-radius: var(--radius);
-    border: 1px solid rgba(23, 33, 43, 0.08);
-    background: rgba(255, 255, 255, 0.88);
+    flex-direction: column;
+    gap: 0;
+    padding-left: 20px;
   }
 
-  .step-num {
-    display: grid;
-    place-items: center;
+  .method-pipeline::before {
+    content: '';
+    position: absolute;
+    left: 13px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: var(--line);
+  }
+
+  .pipeline-step {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+    position: relative;
+  }
+
+  .step-marker {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: rgba(23, 33, 43, 0.08);
-    color: var(--ink);
-    font-size: 0.82rem;
-    font-weight: 800;
-    flex-shrink: 0;
-  }
-
-  .step-content h4 {
-    font-size: 0.9rem;
-    margin-bottom: 6px;
-  }
-
-  .step-content p {
-    color: var(--muted);
-    font-size: 0.86rem;
-    margin-bottom: 0;
-  }
-
-  .evidence-cards { display: grid; gap: 10px; margin-bottom: 20px; }
-
-  .evidence-card {
-    padding: 14px;
-    border-radius: var(--radius);
-    background: rgba(245, 242, 237, 0.85);
-    border: 1px solid rgba(23, 33, 43, 0.08);
-  }
-
-  .evidence-card h4 { font-size: 0.88rem; margin-bottom: 6px; }
-  .evidence-card p { color: var(--muted); font-size: 0.86rem; margin-bottom: 0; }
-
-  .robustness-bars {
-    padding: 18px;
-    border-radius: var(--radius);
-    background: rgba(255, 255, 255, 0.88);
-    border: 1px solid rgba(23, 33, 43, 0.08);
-  }
-
-  .robustness-bars h4 { font-size: 0.92rem; margin-bottom: 4px; }
-
-  .bar-subtitle {
-    font-size: 0.82rem;
-    color: var(--muted);
-    margin-bottom: 14px;
-  }
-
-  .bar-row {
+    background: var(--ink);
     display: grid;
-    grid-template-columns: 80px 1fr 50px;
-    gap: 10px;
+    place-items: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    margin-left: -20px;
+  }
+
+  .step-marker span {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .step-body h4 { font-size: 0.92rem; margin-bottom: 4px; }
+  .step-body p { font-size: 0.88rem; color: var(--muted); margin-bottom: 0; line-height: 1.6; }
+
+  .method-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .robustness-panel {
+    padding: 24px;
+  }
+
+  .robustness-panel h3 { font-size: 1.05rem; margin-bottom: 4px; }
+
+  .rob-subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .rob-bars { display: flex; flex-direction: column; gap: 12px; }
+
+  .rob-row {
+    display: grid;
+    grid-template-columns: 72px 1fr 52px;
+    gap: 12px;
     align-items: center;
-    margin-bottom: 8px;
-    font-size: 0.88rem;
   }
 
-  .bar-label { font-weight: 700; }
-  .bar-value { text-align: right; color: var(--muted); }
+  .rob-label {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+  }
 
-  .bar-track {
-    height: 10px;
+  .rob-track {
+    height: 8px;
     border-radius: 999px;
-    background: rgba(23, 33, 43, 0.08);
+    background: var(--bg);
     overflow: hidden;
+    border: 1px solid var(--line);
   }
 
-  .bar-fill {
+  .rob-fill {
     height: 100%;
     border-radius: 999px;
-    transition: width 0.5s ease;
+    transition: width 0.6s ease;
   }
 
-  .bar-good { background: var(--spf); }
-  .bar-moderate { background: var(--emo); }
-  .bar-weak { background: var(--str); }
+  .rob-val {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-align: right;
+  }
 
-  .bar-note {
+  .rob-val.good { color: var(--spf); }
+  .rob-val.moderate { color: #b8860b; }
+  .rob-val.weak { color: var(--str); }
+
+  .rob-note {
     font-size: 0.82rem;
     color: var(--muted);
-    margin-top: 10px;
+    margin-top: 14px;
     margin-bottom: 0;
   }
 
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .evidence-item { padding: 16px; }
+  .evidence-item h4 { font-size: 0.84rem; margin-bottom: 4px; }
+  .evidence-item p { font-size: 0.82rem; color: var(--muted); margin-bottom: 0; line-height: 1.55; }
+
+  .method-figure { box-shadow: var(--shadow-sm); }
+
   @media (max-width: 768px) {
-    .methods-grid { grid-template-columns: 1fr; }
+    .method-layout { grid-template-columns: 1fr; }
+    .evidence-grid { grid-template-columns: 1fr; }
   }
 </style>

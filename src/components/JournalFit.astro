@@ -1,24 +1,24 @@
 <section id="fit">
   <div class="container">
     <div class="section-head">
-      <div>
-        <div class="kicker">Why this matters to an editor</div>
-        <h2>Review-worthiness at a glance.</h2>
-      </div>
-      <p>The site should help the editor see contribution, rigor, and significance quickly without re-reading the full manuscript.</p>
+      <div class="kicker">Why This Matters</div>
+      <h2>Review-worthiness at a glance.</h2>
     </div>
-    <div class="fit-grid">
-      <div class="panel fit-card">
-        <h3>Substantive value</h3>
-        <p>The study addresses youth mental health under a prolonged societal stressor and reframes the question from symptom prevalence to system organization, which gives the paper conceptual reach beyond pandemic period description.</p>
+    <div class="fit-grid stagger">
+      <div class="panel fit-card" style="border-top: 3px solid var(--spf)">
+        <div class="fit-label">Substantive</div>
+        <h3>System organization, not just prevalence</h3>
+        <p>The study reframes youth mental health under prolonged crisis from symptom burden to system architecture, giving the paper conceptual reach beyond pandemic-period description.</p>
       </div>
-      <div class="panel fit-card">
-        <h3>Methodological value</h3>
-        <p>The paper contributes an interpretable module-control framework, exact dominating-set enumeration, and a direct comparison of metric robustness that is highly relevant for network-based mental-health research.</p>
+      <div class="panel fit-card" style="border-top: 3px solid var(--csf)">
+        <div class="fit-label">Methodological</div>
+        <h3>Module control with exact enumeration</h3>
+        <p>An interpretable module-control framework, exact dominating-set enumeration, and a direct comparison of metric robustness — highly relevant for network-based mental health research.</p>
       </div>
-      <div class="panel fit-card">
-        <h3>Translational value</h3>
-        <p>The manuscript suggests that phase-tailored intervention strategies may be more appropriate than a fixed response, because control is concentrated early but becomes more distributed as crisis becomes chronic.</p>
+      <div class="panel fit-card" style="border-top: 3px solid var(--emo)">
+        <div class="fit-label">Translational</div>
+        <h3>Phase-tailored intervention targets</h3>
+        <p>Control is concentrated early but becomes more distributed as crisis becomes chronic, suggesting that phase-tailored strategies may be more appropriate than a fixed response.</p>
       </div>
     </div>
   </div>
@@ -31,9 +31,20 @@
     gap: 16px;
   }
 
-  .fit-card { padding: 22px; }
-  .fit-card h3 { font-size: 1.02rem; margin-bottom: 10px; }
-  .fit-card p { color: var(--muted); font-size: 0.92rem; margin-bottom: 0; }
+  .fit-card { padding: 28px 24px; }
+
+  .fit-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+
+  .fit-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+  .fit-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0; line-height: 1.65; }
 
   @media (max-width: 768px) {
     .fit-grid { grid-template-columns: 1fr; }

@@ -1,77 +1,98 @@
 <section id="resources">
-  <div class="container">
+  <div class="container-narrow">
     <div class="section-head">
-      <div>
-        <div class="kicker">Companion assets</div>
-        <h2>What to open next.</h2>
-      </div>
+      <div class="kicker">Resources</div>
+      <h2>What to read next.</h2>
     </div>
-    <div class="resource-grid">
-      <a class="panel resource-link" href="#">
-        <div>
+    <div class="resource-list">
+      <a class="panel resource-item" href="#">
+        <div class="resource-icon">PDF</div>
+        <div class="resource-info">
           <strong>Main manuscript</strong>
-          <span>Full article PDF for formal review reading.</span>
+          <span>Full article for formal review.</span>
         </div>
-        <span class="resource-arrow">PDF &rarr;</span>
+        <span class="resource-arrow">&rarr;</span>
       </a>
-      <a class="panel resource-link" href="#">
-        <div>
-          <strong>Supplementary materials</strong>
-          <span>Penalty sensitivity, variable mapping, and additional robustness context.</span>
+      <a class="panel resource-item" href="#">
+        <div class="resource-icon">SI</div>
+        <div class="resource-info">
+          <strong>Supplementary information</strong>
+          <span>Penalty sensitivity, variable mapping, additional robustness.</span>
         </div>
-        <span class="resource-arrow">PDF &rarr;</span>
+        <span class="resource-arrow">&rarr;</span>
       </a>
-      <a class="panel resource-link" href="https://github.com/realfty/covid-mcn">
-        <div>
+      <a class="panel resource-item" href="https://github.com/realfty/covid-mcn">
+        <div class="resource-icon">&lt;/&gt;</div>
+        <div class="resource-info">
           <strong>Analysis code</strong>
-          <span>Full analysis pipeline on GitHub.</span>
+          <span>Full pipeline on GitHub.</span>
         </div>
-        <span class="resource-arrow">GitHub &rarr;</span>
+        <span class="resource-arrow">&rarr;</span>
       </a>
     </div>
   </div>
 </section>
 
 <style>
-  .resource-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-
-  .resource-link {
+  .resource-list {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .resource-item {
+    display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 20px;
+    gap: 16px;
+    padding: 18px 20px;
+    transition: all 0.2s ease;
     color: var(--ink);
-    transition: transform 0.15s ease;
   }
 
-  .resource-link:hover {
-    transform: translateY(-2px);
+  .resource-item:hover {
+    transform: translateX(4px);
     text-decoration: none;
+    border-color: var(--ink);
   }
 
-  .resource-link strong {
-    display: block;
-    margin-bottom: 4px;
-    font-size: 0.95rem;
-  }
-
-  .resource-link span {
+  .resource-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
     color: var(--muted);
-    font-size: 0.86rem;
+    flex-shrink: 0;
+  }
+
+  .resource-info {
+    flex: 1;
+  }
+
+  .resource-info strong {
+    display: block;
+    font-size: 0.92rem;
+    margin-bottom: 2px;
+  }
+
+  .resource-info span {
+    font-size: 0.84rem;
+    color: var(--muted);
   }
 
   .resource-arrow {
-    flex-shrink: 0;
-    font-weight: 700;
-    color: var(--accent);
+    font-size: 1.2rem;
+    color: var(--muted);
+    transition: transform 0.2s, color 0.2s;
   }
 
-  @media (max-width: 768px) {
-    .resource-grid { grid-template-columns: 1fr; }
+  .resource-item:hover .resource-arrow {
+    transform: translateX(4px);
+    color: var(--ink);
   }
 </style>
